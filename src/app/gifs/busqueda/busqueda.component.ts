@@ -19,11 +19,13 @@ export class BusquedaComponent{
     buscar( ): void {
       const valor = this.txtBuscar.nativeElement.value;
 
+      const formateado = valor.trim().toLocaleLowerCase();
+
       if ( valor.trim().length === 0){
         return;
       }
       
-      this.gifsService.buscarGifs(valor);
+      this.gifsService.buscarGifs(formateado);
 
       this.txtBuscar.nativeElement.value = '';
     }
